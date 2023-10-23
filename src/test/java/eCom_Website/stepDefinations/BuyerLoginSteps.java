@@ -49,6 +49,20 @@ public class BuyerLoginSteps extends LoginURL {
 
     @Then("it's login successfully")
     public void loginSuccess(){
+        driver.quit();
+    }
+
+    //Scenario: Buyer shouldn't be able to login to keep the email field empty with correct password
+    @When("buyer keep blank the email field but input the correct password")
+    public void emptyEmailFieldButInputPassword(){
+        buyer_login_pom.inputEmailPassword("",prop.getProperty("password"));
 
     }
+    @Then("it should throw an error message under the email field")
+    public void throwErrorMessage(){
+        Assert.assertEquals(buyer_login_pom.verifyErrorMessageBlankEmail(),"Please provide your email address", "Text not matched");
+        System.out.println(buyer_login_pom.verifyErrorMessageBlankEmail());
+    }
+
+
 }
