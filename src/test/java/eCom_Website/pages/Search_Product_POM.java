@@ -26,6 +26,7 @@ public class Search_Product_POM extends LoginURL {
     }
     //send keys on the searchbar
     public void SendProductNameOnSearchBar(String productName){
+
         searchBarLink.sendKeys(productName);
     }
     //click search icon

@@ -1,4 +1,4 @@
-Feature:
+Feature: E-commerce Search Product
   Scenario: Buyer should be able to search a product by the product name after login
     Given Buyer navigates to the baseUrl
     When click on the searchBar

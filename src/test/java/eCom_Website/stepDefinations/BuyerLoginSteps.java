@@ -12,6 +12,7 @@ public class BuyerLoginSteps extends LoginURL {
 
     @Given("Buyer navigates to the baseUrl")
     public void navigateBaseUrl(){
+
         initializeDriver();
     }
     @When("click on the user icon from the right top corner")
@@ -44,11 +45,13 @@ public class BuyerLoginSteps extends LoginURL {
     public void navigateHomepageUsername(){
         buyer_login_pom.clickUserIcon();
         waitDriver(3000);
-        buyer_login_pom.verifyUserName();
+        Assert.assertEquals(buyer_login_pom.verifyUserName(),"israk","Login not success");
+        System.out.println(buyer_login_pom.verifyUserName());
     }
 
     @Then("it's login successfully")
     public void loginSuccess(){
+        System.out.println("Login Success");
         driver.quit();
     }
 
@@ -56,7 +59,6 @@ public class BuyerLoginSteps extends LoginURL {
     @When("buyer keep blank the email field but input the correct password")
     public void emptyEmailFieldButInputPassword(){
         buyer_login_pom.inputEmailPassword("",prop.getProperty("password"));
-
     }
     @Then("it should throw an error message under the email field")
     public void throwErrorMessage(){

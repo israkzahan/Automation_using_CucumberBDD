@@ -24,7 +24,7 @@ public class Buyer_Login_POM extends LoginURL {
 
     @FindBy(xpath = "//div[@class='ant-form-item-explain-error']")
     WebElement errorMessageBlankEmailField;
-//initialize the elements
+    //initialize the elements
     public Buyer_Login_POM(){
 
         PageFactory.initElements(driver, this);
@@ -51,14 +51,12 @@ public class Buyer_Login_POM extends LoginURL {
         loginButton.click();
     }
 
-    public void verifyUserName(){
-        String userNameText= userName.getText();
-        System.out.println(userNameText);
-        Assert.assertEquals(userNameText,"israk","User name not matching");
-        System.out.println("User name found");
+    public String verifyUserName(){
+        return userName.getText();
     }
 
     public String verifyErrorMessageBlankEmail(){
+
         return errorMessageBlankEmailField.getText();
     }
 
