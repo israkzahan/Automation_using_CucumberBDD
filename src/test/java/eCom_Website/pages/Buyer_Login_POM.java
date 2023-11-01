@@ -48,6 +48,7 @@ public class Buyer_Login_POM extends LoginURL {
     //click on the login button
 
     public void clickLoginButton(){
+
         loginButton.click();
     }
 

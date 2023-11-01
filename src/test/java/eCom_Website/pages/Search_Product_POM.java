@@ -22,6 +22,7 @@ public class Search_Product_POM extends LoginURL {
 
     //click searchBar
     public void clickSearchBar(){
+
         searchBarLink.click();
     }
     //send keys on the searchbar
@@ -31,9 +32,11 @@ public class Search_Product_POM extends LoginURL {
     }
     //click search icon
     public void clickSearchIcon(){
+
         searchIcon.click();
     }
     public String getProductName(){
+
         return productName.getText();
     }
 }
