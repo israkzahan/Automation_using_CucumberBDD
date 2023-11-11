@@ -36,7 +36,11 @@ public class Search_Product_POM extends LoginURL {
         searchIcon.click();
     }
     public String getProductName(){
-
         return productName.getText();
+
     }
+    public void clickProduct(){
+        productName.click();
+    }
+
 }

@@ -19,7 +19,7 @@ public class Buyer_Login_POM extends LoginURL {
     @FindBy(xpath = "//button[normalize-space()='Log in']")
     WebElement loginButton;
 
-    @FindBy(xpath = "//p[normalize-space()='israk']")
+    @FindBy(xpath = "//div[@class='name_mobile']/p")
     WebElement userName;
 
     @FindBy(xpath = "//div[@class='ant-form-item-explain-error']")
@@ -35,10 +35,12 @@ public class Buyer_Login_POM extends LoginURL {
         userIcon.click();
     }
     //get Login text
-    public void getLoginText(){
-        String loginText= loginTitle.getText();
-        System.out.println(loginText);
-        Assert.assertEquals(loginText,"Login","Not Login that's why Login text doesn't come");
+    public String getLoginText(){
+        return loginTitle.getText();
+//        String loginText= loginTitle.getText();
+//        System.out.println(loginText);
+//        Assert.assertEquals(loginText,"Login","Not Login that's why Login text doesn't come");
+//
     }
     //input the email and password
     public void inputEmailPassword(String email, String password){
@@ -53,6 +55,7 @@ public class Buyer_Login_POM extends LoginURL {
     }
 
     public String verifyUserName(){
+        //userIcon.click();
         return userName.getText();
     }
 

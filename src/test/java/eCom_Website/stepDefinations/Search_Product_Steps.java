@@ -2,6 +2,8 @@ package eCom_Website.stepDefinations;
 
 import eCom_Website.pages.Search_Product_POM;
 import eCom_Website.utils.LoginURL;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
@@ -31,6 +33,17 @@ public class Search_Product_Steps extends LoginURL {
         Assert.assertEquals(search_product_pom.getProductName(),"HeadPhone","The product name doesn't match");
         waitDriver(2000);
         System.out.println(search_product_pom.getProductName());
-        driver.quit();
+        search_product_pom.clickProduct();
+       // driver.quit();
+    }
+    @And("search for a product")
+    public void searchForProduct(){
+        search_product_pom= new Search_Product_POM();
+        search_product_pom.SendProductNameOnSearchBar(prop.getProperty("productName"));
+        waitDriver(2000);
+        search_product_pom.clickSearchIcon();
+        waitDriver(2000);
+        search_product_pom.clickProduct();
+        waitDriver(2000);
     }
 }
