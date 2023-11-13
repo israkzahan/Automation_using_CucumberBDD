@@ -1,6 +1,6 @@
 package eCom_Website.stepDefinations;
 
-import eCom_Website.pages.Buyer_Login_POM;
+import eCom_Website.pages_Buyer.Buyer_Login_POM;
 import eCom_Website.utils.LoginURL;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -36,7 +36,7 @@ public class BuyerLoginSteps extends LoginURL {
         waitDriver(2000);
     }
 
-    @When("click on  the login in button")
+    @When("click on the login button")
     public void clickLoginButton(){
         buyer_login_pom.clickLoginButton();
 

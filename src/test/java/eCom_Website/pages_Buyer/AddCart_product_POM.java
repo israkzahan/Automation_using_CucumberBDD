@@ -1,4 +1,4 @@
-package eCom_Website.pages;
+package eCom_Website.pages_Buyer;
 
 import eCom_Website.utils.LoginURL;
 import org.openqa.selenium.WebElement;

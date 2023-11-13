@@ -1,10 +1,9 @@
 package eCom_Website.stepDefinations;
 
-import eCom_Website.pages.AddCart_product_POM;
+import eCom_Website.pages_Buyer.AddCart_product_POM;
 import eCom_Website.utils.LoginURL;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.testng.Assert;
 
 public class BuyerAddToCartProduct extends LoginURL {

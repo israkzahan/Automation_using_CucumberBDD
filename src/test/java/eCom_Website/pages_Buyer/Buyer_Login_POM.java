@@ -1,10 +1,9 @@
-package eCom_Website.pages;
+package eCom_Website.pages_Buyer;
 
 import eCom_Website.utils.LoginURL;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 public class Buyer_Login_POM extends LoginURL {
 

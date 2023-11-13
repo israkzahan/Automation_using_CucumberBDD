@@ -6,15 +6,19 @@ import io.cucumber.java.Before;
 
 public class Hooks extends LoginURL {
     //global hooks
-    @Before
+    @Before("@Buyer")
     public void setupBrowser(){
         System.out.println("Executing Before Hooks........");
         initializeDriver();
     }
-    @Before("@Smoke")
-    public void smokeTests(){
-        System.out.println("Execute scenario-2");
-        System.out.println("Executing the tagged hooks.....");
+//    @Before("@Smoke")
+//    public void smokeTests(){
+//        System.out.println("Execute scenario-2");
+//        System.out.println("Executing the tagged hooks.....");
+//    }
+    @Before("@Seller")
+    public void setupBrowserForSeller(){
+        initializeDriverForSeller();
     }
     @After
     public void tearDown(){

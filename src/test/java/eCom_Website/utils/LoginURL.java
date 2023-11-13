@@ -28,7 +28,7 @@ public class LoginURL {
         }
     }
 
-        //initialize the driver
+        //initialize the driver for e-commerce website Buyer Portal
         public static void initializeDriver(){
         String browserName= prop.getProperty("browser");
         if (browserName.equals("chrome")){
@@ -42,6 +42,20 @@ public class LoginURL {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(prop.getProperty("baseURL"));
         }
+    //initialize the driver for e-commerce website Seller Portal
+    public static void initializeDriverForSeller(){
+        String browserName= prop.getProperty("browser");
+        if (browserName.equals("chrome")){
+            driver=new ChromeDriver();
+        }else if (browserName.equals("firefox")){
+            driver= new SafariDriver();
+        }else {
+            System.out.println("Browser's name is not correct! ");
+        }
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get(prop.getProperty("sellerURL"));
+    }
 
         public static void waitDriver(long duration){
         try {

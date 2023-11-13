@@ -1,8 +1,7 @@
-package eCom_Website.pages;
+package eCom_Website.pages_Buyer;
 
 import eCom_Website.utils.LoginURL;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 

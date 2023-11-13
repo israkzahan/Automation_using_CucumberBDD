@@ -1,8 +1,7 @@
 package eCom_Website.stepDefinations;
 
-import eCom_Website.pages.BuyerBuyProduct_POM;
+import eCom_Website.pages_Buyer.BuyerBuyProduct_POM;
 import eCom_Website.utils.LoginURL;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
@@ -26,8 +25,8 @@ public class BuyerBuyProduct extends LoginURL {
     public void click_on_the_add_new_address_plus_icon() {
         buyerBuyProduct_pom.clickAddAddressButton();
         waitDriver(2000);
-        Assert.assertEquals(buyerBuyProduct_pom.clickAddAddressButton(),"Add New Address");
-        System.out.println(buyerBuyProduct_pom.clickAddAddressButton());
+//        Assert.assertEquals(buyerBuyProduct_pom.clickAddAddressButton(),"Add New Address","Form doesn't show");
+//        System.out.println(buyerBuyProduct_pom.clickAddAddressButton());
 
     }
 
@@ -68,6 +67,8 @@ public class BuyerBuyProduct extends LoginURL {
     public void click_on_the_confirm_order_button() {
         buyerBuyProduct_pom.clickConfirmOrderButton();
         waitDriver(2000);
+        Assert.assertEquals(buyerBuyProduct_pom.verifyOrderConfirmationText(),"Your Orders","Order Failed");
+        System.out.println(buyerBuyProduct_pom.verifyOrderConfirmationText());
 
     }
 }

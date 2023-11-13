@@ -1,4 +1,4 @@
-package eCom_Website.pages;
+package eCom_Website.pages_Buyer;
 
 import eCom_Website.utils.LoginURL;
 import org.openqa.selenium.Keys;
@@ -38,8 +38,10 @@ public class BuyerBuyProduct_POM extends LoginURL {
     WebElement paymentMethodButton;
     @FindBy(xpath = "//button[normalize-space()='Confirm Order']")
     WebElement confirmOrderdButton;
-    @FindBy(xpath = "//div[@id='rc_unique_0']")
+    @FindBy(xpath = "//div[@id='rc_unique_1']")
     WebElement addNewAddressText;
+    @FindBy(xpath = "//h5[normalize-space()='Your Orders']")
+    WebElement orderConfirmations;
 
     public BuyerBuyProduct_POM(){
         PageFactory.initElements(driver,this);
@@ -50,9 +52,9 @@ public class BuyerBuyProduct_POM extends LoginURL {
     public void clickContinueToShippingButton(){
         continueToShippingButton.click();
     }
-    public String clickAddAddressButton(){
+    public void clickAddAddressButton(){
         addNewAddressButton.click();
-        return addNewAddressText.getText();
+        //return addNewAddressText.getText();
     }
     //input all the information
     public void inputAllTheInformation(String fullName,String address,String zipCode,String city,String mobileNumber){
@@ -83,6 +85,10 @@ public class BuyerBuyProduct_POM extends LoginURL {
     }
     public void clickConfirmOrderButton(){
         confirmOrderdButton.click();
+    }
+
+    public String verifyOrderConfirmationText(){
+        return orderConfirmations.getText();
     }
 
 

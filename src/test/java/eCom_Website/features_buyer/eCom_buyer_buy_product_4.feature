@@ -1,4 +1,5 @@
 Feature:  Buyer Buy Products
+  @Buyer
   Scenario: Buyer should be able to buy a product after searching that product
     Given Buyer navigates to the baseUrl
     When the buyer is logged in to the website
