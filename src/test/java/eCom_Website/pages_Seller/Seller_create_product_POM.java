@@ -28,8 +28,10 @@ public class Seller_create_product_POM extends LoginURL {
 
     @FindBy(xpath = "//span[contains(text(),'Laptops')]")
     WebElement laptopOption;
-    @FindBy(xpath = "//span[@title='Xbox']")
+    @FindBy(xpath = "//*[@id=\"rc_select_1\"]")
     WebElement brandField;
+    @FindBy(xpath = "//div[contains(text(),'Xiaomi')]")
+    WebElement appleBrand;
     @FindBy(xpath = "//input[@placeholder='Unit (e.g. KG,Pc etc)']")
     WebElement unitField;
     @FindBy(xpath = "//input[@placeholder='Enter tag name and press enter']")
@@ -37,13 +39,13 @@ public class Seller_create_product_POM extends LoginURL {
  //---------------------------Product Images-----------------------------------
     @FindBy(xpath = "//span[normalize-space()='Upload thumbnail']")
     WebElement thumbnailImage;
-    @FindBy(xpath = "//*[@id=\"react-media-library-tabs-tabpane-upload\"]/div/div/p")
+    @FindBy(xpath = "//*[@id=\"react-media-library-tabs-tabpane-upload\"]/div/div/input")
     WebElement uploadImageOption;
-    @FindBy(xpath = "//span[normalize-space()='Upload Galary']")
-    WebElement uploadGalary;
+//    @FindBy(xpath = "//span[normalize-space()='Upload Galary']")
+//    WebElement uploadGalary;
     @FindBy(xpath = "//a[@id='react-media-library-tabs-tab-library']")
     WebElement libraryButton;
-    @FindBy(xpath = "//body[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[8]/div[1]/img[1]")
+    @FindBy(xpath = "//*[@id=\"react-media-library-tabs-tabpane-library\"]/div[1]/div[1]/div/img")
     WebElement selectProductImage;
     @FindBy(xpath = "//button[normalize-space()='Select File']")
     WebElement selectFileButton;
@@ -92,7 +94,11 @@ public class Seller_create_product_POM extends LoginURL {
         subCategoryField.click();
         waitDriver(1000);
         laptopOption.click();
+        waitDriver(1000);
         brandField.click();
+        waitDriver(1000);
+        appleBrand.click();
+        waitDriver(1000);
         unitField.sendKeys(productUnit);
         tagsField.sendKeys(tags);
 //        categoryField.sendKeys("Electronics",Keys.ENTER);
@@ -104,28 +110,42 @@ public class Seller_create_product_POM extends LoginURL {
 //        brandField.sendKeys(productBrand);
 
     }
-    public void uploadProductImage(String imagePath){
+    public void uploadProductImage(){
+        waitDriver(1000);
         thumbnailImage.click();
         //uploadImageOption.sendKeys("C:\\Users\\TS4U\\IdeaProjects\\eCom_UI_Automation_BDD\\images\\4940511ad5fae4c492189c4710741857.jpg");
-        uploadImageOption.sendKeys(imagePath);
-        uploadGalary.click();
+        waitDriver(2000);
+        uploadImageOption.sendKeys("C:\\Users\\TS4U\\IdeaProjects\\eCom_UI_Automation_BDD\\images\\fancy_hat.jpg");
+        waitDriver(1000);
         libraryButton.click();
+        waitDriver(1000);
         selectProductImage.click();
+        waitDriver(1000);
         selectFileButton.click();
+        waitDriver(1000);
     }
     public void productPriceStock(){
         scroll.executeScript("window.scrollBy(0,300)");
+        waitDriver(1000);
         unitPrice.sendKeys("1000");
+        waitDriver(1000);
         discountPrice.sendKeys("850");
+        waitDriver(1000);
         taxValueField.sendKeys("900");
+        waitDriver(1000);
         productSKU.sendKeys("Null");
+        waitDriver(1000);
         productStock.sendKeys("5");
+        waitDriver(1000);
     }
     public void productDescription(){
         descriptionField.sendKeys("Color: Black, Size: 5'' ");
+
+
     }
     public void clickSaveProductBtn(){
         scroll.executeScript("window.scrollBy(0,700)");
+        waitDriver(2000);
         saveProduct.click();
     }
 

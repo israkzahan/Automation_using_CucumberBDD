@@ -33,7 +33,7 @@ public class Seller_create_product extends LoginURL {
 
     @Given("upload the image in the product price + stock section")
     public void upload_the_image_in_the_product_price_stock_section() {
-        seller_create_product_pom.uploadProductImage(prop.getProperty("imagePath"));
+        seller_create_product_pom.uploadProductImage();
         waitDriver(2000);
 
     }
@@ -41,6 +41,8 @@ public class Seller_create_product extends LoginURL {
     @Given("input the description in the Product Description section")
     public void input_the_description_in_the_product_description_section() {
         seller_create_product_pom.productPriceStock();
+        waitDriver(2000);
+        seller_create_product_pom.productDescription();
         waitDriver(2000);
 
     }
@@ -54,7 +56,7 @@ public class Seller_create_product extends LoginURL {
 
     @Then("it should create a product")
     public void it_should_create_a_product() {
-        System.out.println("Product Successfull");
+        System.out.println("Product Successful");
 
     }
 }
