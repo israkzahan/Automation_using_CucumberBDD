@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 public class BuyerAddToCartProduct extends LoginURL {
     AddCart_product_POM addCart_product_pom;
-    @And("click on the Add to cart button")
+    @And("click on the AddAdd to cart button")
     public void clickOnProduct(){
         addCart_product_pom= new AddCart_product_POM();
         addCart_product_pom.clickAddCartButton();
