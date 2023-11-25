@@ -38,8 +38,6 @@ public class BuyerBuyProduct_POM extends LoginURL {
     WebElement paymentMethodButton;
     @FindBy(xpath = "//button[normalize-space()='Confirm Order']")
     WebElement confirmOrderdButton;
-    @FindBy(xpath = "//div[@id='rc_unique_1']")
-    WebElement addNewAddressText;
     @FindBy(xpath = "//h5[normalize-space()='Your Orders']")
     WebElement orderConfirmations;
 

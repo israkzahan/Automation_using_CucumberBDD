@@ -3,7 +3,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/java/eCom_Website/features",
+        features = "src/test/java/eCom_Website/features_buyer",
         glue = "eCom_Website/stepDefinations"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

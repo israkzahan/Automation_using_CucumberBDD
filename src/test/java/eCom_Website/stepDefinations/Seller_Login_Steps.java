@@ -12,6 +12,7 @@ public class Seller_Login_Steps extends LoginURL {
 
     @Given("Seller on the login panel")
     public void seller_on_the_login_panel() {
+
         System.out.println("Navigates to the login panel");
     }
 
@@ -20,8 +21,6 @@ public class Seller_Login_Steps extends LoginURL {
         seller_login_pom= new Seller_Login_POM();
         seller_login_pom.input_Email_Password(prop.getProperty("seller_Email"),prop.getProperty("seller_Password"));
         waitDriver(2000);
-
-
     }
 
     @When("click on the seller login button")
