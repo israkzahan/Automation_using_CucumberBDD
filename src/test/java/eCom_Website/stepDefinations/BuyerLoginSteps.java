@@ -39,8 +39,7 @@ public class BuyerLoginSteps extends LoginURL {
     @When("click on the login button")
     public void clickLoginButton(){
         buyer_login_pom.clickLoginButton();
-
-
+        waitDriver(2000);
     }
 
 
@@ -50,7 +49,7 @@ public class BuyerLoginSteps extends LoginURL {
         buyer_login_pom.clickUserIcon();
         waitDriver(3000);
         System.out.println(buyer_login_pom.verifyUserName());
-        Assert.assertEquals(buyer_login_pom.verifyUserName(),"israk","Login not success");
+        Assert.assertEquals(buyer_login_pom.verifyUserName(),"Israk","Login not success");
 
     }
 
